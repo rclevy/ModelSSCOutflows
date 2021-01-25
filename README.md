@@ -11,8 +11,8 @@ Example: `>> python ModelOutflowPCygni.py '14' 'CS(7-6)' './'`
 ## Troubleshooting
 - The code should check all paths and create them where possible. Check for errors and exit messages where paths are broken/missing.
 - Check the list of required packages (`>> python ModelOutflowPCygni.py -h` and/or `>> python ComparePCygniModel.py -h`).
-- Consult [the paper](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract)
+- Consult [the paper](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract).
 - Email the author Rebecca Levy (rlevy.astro@gmail.com).
 
 ## Notes
-This repository's main branch is called [main, not master](https://www.cnet.com/news/microsofts-github-is-removing-coding-terms-like-master-and-slave/)
+This repository's main branch is called [main, not master](https://www.cnet.com/news/microsofts-github-is-removing-coding-terms-like-master-and-slave/).
