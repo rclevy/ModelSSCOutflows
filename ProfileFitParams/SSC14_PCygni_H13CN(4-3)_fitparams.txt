@@ -1,0 +1,7 @@
+#Parameters and Uncertainties for two-component Gaussian fit (y=a1*np.exp(-((x-b1)**2/(2*c1**2)))+a2*np.exp(-((x-b2)**2/(2*c2**2)))+d)
+#Cluster = SSC14
+#Line = H13CN(4-3)
+#Row 0 = fitted value, Row 1 = uncertainty
+#a1	b1	c1	a2	b2	c2	d
+5.185207	2.148480	37.616363	-9.702309	-24.308077	16.040850	12.538847
+0.621467	4.530610	2.571514	0.718549	0.735219	0.999878	0.070274
