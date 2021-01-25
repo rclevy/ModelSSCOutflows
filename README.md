@@ -9,10 +9,11 @@ Contains scripts and input files used in the modeling presented by [Levy et al. 
 Example: `>> python ModelOutflowPCygni.py '14' 'CS(7-6)' './'`
 
 ## Troubleshooting
-- The code should check all paths and create them where possible. Check for errors and exit messages where paths are broken/missing.
-- Check the list of required packages (`>> python ModelOutflowPCygni.py -h` and/or `>> python ComparePCygniModel.py -h`).
-- Consult [the paper](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract).
-- Email the author Rebecca Levy (rlevy.astro@gmail.com).
+1. The code should check all paths and create them where possible. Check for errors and exit messages where paths are broken/missing.
+2. Check the list of required packages (`>> python ModelOutflowPCygni.py -h` and/or `>> python ComparePCygniModel.py -h`).
+    * Code tested using Python 3.7.4, iPython 7.13.0, argparse 1.1, astropy 3.2.1, matplotlib 3.1.3, numpy 1.16.4, pandas 1.0.3, scipy 1.4.1 
+3. Consult [the paper](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract).
+4. Email the author Rebecca Levy (rlevy.astro@gmail.com).
 
 ## Notes
 This repository's main branch is called [main, not master](https://www.cnet.com/news/microsofts-github-is-removing-coding-terms-like-master-and-slave/).
