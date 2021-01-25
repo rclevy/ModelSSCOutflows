@@ -413,10 +413,10 @@ def model_outflow_pcygni(ssc,line,theta,inc,phi,v_outflow,v_outflow_fast,v_outfl
 		J_l = int(line.split('-')[1].split(')')[0])
 		mol_dat=path+'MolecularLineData/'+line_str+'_data.csv'
 		if os.path.isdir(path+'MolecularLineData/')==False:
-			print('Directory with molecular line "'path+'MolecularLineData/'+line_str+'_data.csv" data not found! I will create it, but other paths may break.')
+			print('Directory with molecular line "'+path+'MolecularLineData/'+line_str+'_data.csv" data not found! I will create it, but other paths may break.')
 			os.system('mkdir '+path+'MolecularLineData/')
 		if os.path.exists(path+'MolecularLineData/'+line_str+'_data.csv')==False:
-			print('Molecular line data file not found "'path+'MolecularLineData/'+line_str+'_data.csv". Exiting...')
+			print('Molecular line data file not found "'+path+'MolecularLineData/'+line_str+'_data.csv". Exiting...')
 			sys.exit()
 		this_line_data = pd.read_csv(mol_dat,comment='#')
 		Ti = this_line_data['T'].values #K, Eu/k
@@ -428,7 +428,7 @@ def model_outflow_pcygni(ssc,line,theta,inc,phi,v_outflow,v_outflow_fast,v_outfl
 		Tl = Ti[np.where(J==J_l)[0][0]].astype('float') #K, Eu/k
 		#load data for this specific transition
 		if os.path.exists(path+'Band7_HighRes_LineID.csv')==False:
-			print('Line list file not found "'path+'Band7_HighRes_LineID.csv". Exiting...')
+			print('Line list file not found "'+path+'Band7_HighRes_LineID.csv". Exiting...')
 			sys.exit()
 		transition_data = pd.read_csv(path+'Band7_HighRes_LineID.csv')
 		idx = transition_data['Line'].values.tolist().index(line)
@@ -1064,7 +1064,7 @@ def model_outflow_pcygni(ssc,line,theta,inc,phi,v_outflow,v_outflow_fast,v_outfl
 		tab_dat = np.array([v_range,T_spec]).T
 
 		if os.path.isdir(path+'Model_Spec_Tables/')==False:
-			os.system('mdkir '+path+'Model_Spec_Tables/')
+			os.system('mkdir '+path+'Model_Spec_Tables/')
 		fname = path+'Model_Spec_Tables/ModelSpec_SSC'+ssc+'_'+line+'_theta'+str(theta)+'_inc'+str(inc)+'_phi'+str(phi)+suffix+'.txt'
 		
 		comments = ('#ssc = '+ssc+'\n#theta = '+str(theta)+' deg\n#inc = '+str(inc)+' deg\n#phi = '+str(phi)+' deg\n'+
