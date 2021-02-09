@@ -1,10 +1,11 @@
 # ModelSSCOutflows
-Contains scripts and input files used in the modeling presented by [Levy et al. 2020](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract). Any use of this code or data must reference [Levy et al. 2020](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract).
+Contains scripts and input files used in the modeling presented by [Levy et al. 2020](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract).
+*Any use of this code or data must reference [Levy et al. 2020](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract).*
 
 ## Getting started
 1. Download all files and folders. 
 2. Check that the dependent packages are installed: argparse, astropy, datetime, matplotlib, mpl_toolkits, numpy, pandas, os, scipy, sys, time
-3. In a python 3 terminal: ``>> python ModelOutflowPCygni.py -h``
+3. In a python 3 terminal, display the help file: ``>> python ModelOutflowPCygni.py -h``
 
 Example: `>> python ModelOutflowPCygni.py '14' 'CS(7-6)' './'`
 
