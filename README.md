@@ -1,5 +1,6 @@
 # ModelSSCOutflows
 Contains scripts and input files used in the modeling presented by [Levy et al. 2020](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract).
+
 *Any use of this code or data must reference [Levy et al. 2020](https://ui.adsabs.harvard.edu/abs/2020arXiv201105334L/abstract).*
 
 ## Getting started
