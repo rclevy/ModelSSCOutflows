@@ -462,27 +462,27 @@ def model_outflow_pcygni(ssc,line,theta,inc,phi,v_outflow,v_outflow_fast,v_outfl
 		dtau_nu = kappa_nu_proj*spaxel_sz_pc*(3.086E18)
 		return dtau_nu
 
-	def calc_T_nu(dtau_nu,Tex_nu,dtau_cont_nu,T_cont_nu):
-		#Do the radiative transfer to get dT(nu) and T(nu) for the cold outflowing component only
-		T_nu = np.zeros(dtau_nu.shape)
-		dT_nu = np.zeros(dtau_nu.shape)
-		for i in range(T_nu.shape[2]-2,-1,-1):
-			T_nu[:,:,i,:] = T_nu[:,:,i+1,:]*np.exp(-(dtau_nu[:,:,i,:]+dtau_cont_nu[:,:,i,:])) + (Tex_nu[:,:,i,:]+T_cont_nu[:,:,i,:])*(1-np.exp(-(dtau_nu[:,:,i,:]+dtau_cont_nu[:,:,i,:])))
-			dT_nu[:,:,i,:] = T_nu[:,:,i,:]-T_nu[:,:,i+1,:]
-		return dT_nu,T_nu
+	# def calc_T_nu(dtau_nu,Tex_nu,dtau_cont_nu,T_cont_nu):
+	# 	#Do the radiative transfer to get dT(nu) and T(nu) for the cold outflowing component only
+	# 	T_nu = np.zeros(dtau_nu.shape)
+	# 	dT_nu = np.zeros(dtau_nu.shape)
+	# 	for i in range(T_nu.shape[2]-2,-1,-1):
+	# 		T_nu[:,:,i,:] = T_nu[:,:,i+1,:]*np.exp(-(dtau_nu[:,:,i,:]+dtau_cont_nu[:,:,i,:])) + (Tex_nu[:,:,i,:]+T_cont_nu[:,:,i,:])*(1-np.exp(-(dtau_nu[:,:,i,:]+dtau_cont_nu[:,:,i,:])))
+	# 		dT_nu[:,:,i,:] = T_nu[:,:,i,:]-T_nu[:,:,i+1,:]
+	# 	return dT_nu,T_nu
 
-	def calc_T_nu_hot(dtau_nu,Tex_nu,dtau_cont_nu,T_cont_nu,dtau_hot_nu,Tex_hot_nu):
-		#Do the radiative transfer to get dT(nu) and T(nu) for the cold outflowing & hot components
-		#This assumes that the components do not interact
-		T_nu = np.zeros(dtau_nu.shape)
-		dT_nu = np.zeros(dtau_nu.shape)
-		for i in range(T_nu.shape[2]-2,-1,-1):
-			dT_c = T_cont_nu[:,:,i,:]*(1-np.exp(-dtau_cont_nu[:,:,i,:]))
-			dT_g = Tex_nu[:,:,i,:]*(1-np.exp(-dtau_nu[:,:,i,:]))
-			dT_h = Tex_hot_nu[:,:,i,:]*(1-np.exp(-dtau_hot_nu[:,:,i,:]))
-			T_nu[:,:,i,:] = T_nu[:,:,i+1,:]*np.exp(-(dtau_nu[:,:,i,:]+dtau_cont_nu[:,:,i,:]+dtau_hot_nu[:,:,i,:])) + dT_c+dT_g+dT_h
-			dT_nu[:,:,i,:] = T_nu[:,:,i,:]-T_nu[:,:,i+1,:]
-		return dT_nu,T_nu
+	# def calc_T_nu_hot(dtau_nu,Tex_nu,dtau_cont_nu,T_cont_nu,dtau_hot_nu,Tex_hot_nu):
+	# 	#Do the radiative transfer to get dT(nu) and T(nu) for the cold outflowing & hot components
+	# 	#This assumes that the components do not interact
+	# 	T_nu = np.zeros(dtau_nu.shape)
+	# 	dT_nu = np.zeros(dtau_nu.shape)
+	# 	for i in range(T_nu.shape[2]-2,-1,-1):
+	# 		dT_c = T_cont_nu[:,:,i,:]*(1-np.exp(-dtau_cont_nu[:,:,i,:]))
+	# 		dT_g = Tex_nu[:,:,i,:]*(1-np.exp(-dtau_nu[:,:,i,:]))
+	# 		dT_h = Tex_hot_nu[:,:,i,:]*(1-np.exp(-dtau_hot_nu[:,:,i,:]))
+	# 		T_nu[:,:,i,:] = T_nu[:,:,i+1,:]*np.exp(-(dtau_nu[:,:,i,:]+dtau_cont_nu[:,:,i,:]+dtau_hot_nu[:,:,i,:])) + dT_c+dT_g+dT_h
+	# 		dT_nu[:,:,i,:] = T_nu[:,:,i,:]-T_nu[:,:,i+1,:]
+	# 	return dT_nu,T_nu
 
 	def calc_T_nu_hot_fast(dtau_nu,Tex_nu,dtau_cont_nu,T_cont_nu,dtau_hot_nu,Tex_hot_nu,dtau_fast_nu,Tex_fast_nu):
 		#Do the radiative transfer to get dT(nu) and T(nu) for the cold (slow & fast) outflowing & hot components
